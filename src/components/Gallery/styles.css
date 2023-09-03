@@ -1,0 +1,80 @@
+.gallery-wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: none;
+}
+.gallery__item {
+  background-position: 50% 50%;
+  background-size: cover;
+  flex: none;
+  border-radius: 6px;
+  position: relative;
+  filter: brightness(1);
+}
+.gallery--row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  --size-factor: 1.25;
+  --item-height: 20vh;
+  width: 100vw;
+  height: 100vh;
+	overflow: hidden;
+}
+
+.gallery--row .gallery__item {
+  width: auto;
+  aspect-ratio: 2 / 3;
+}
+
+.gallery--row .gallery__item--s {
+  height: var(--item-height);
+}
+
+.gallery--row .gallery__item--m {
+  height: calc(var(--size-factor) * var(--item-height));
+}
+
+.gallery--row .gallery__item--l {
+  height: calc(var(--size-factor) * 2 * var(--item-height));
+}
+
+.gallery--row .gallery__item--xl {
+  z-index: 100;
+  height: calc(var(--size-factor) * 3 * var(--item-height));
+}
+.gallery--switch.gallery--row .gallery__item--m,
+.gallery--switch.gallery--row .gallery__item--l {
+  height: var(--item-height);
+}
+.gallery--row .gallery__item--center {
+	height: 100vh;
+	width: 100vw;
+	aspect-ratio: auto;
+	filter: brightness(0.5);
+}
+
+.gallery--row .caption {
+  position: absolute;
+	width: 100%;
+	height: auto;
+	bottom: 40;
+	padding: 4.5vw;
+	max-width: 730px;
+	opacity: 1;
+  z-index: 1000;
+  color: white;
+  font-size: 35pt;
+  font-family: 'Playfair Display', serif;
+}
+

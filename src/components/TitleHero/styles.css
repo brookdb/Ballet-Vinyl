@@ -1,0 +1,21 @@
+#title-hero{
+  height: 100vh;
+  position: relative;
+  background-image: url('https://urania-nf.hu/images/musor/orig/pic_20200127124227_v3pm5t26n20.jpg');
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-wrap: wrap;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+ .text-left, .text-right {
+  font-size: 8rem;
+  font-weight: bold;
+  opacity: 0;
+  mix-blend-mode: difference;
+  color: green;
+
+}

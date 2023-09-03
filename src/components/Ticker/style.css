@@ -1,0 +1,36 @@
+.ticker {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.ticker li{
+  font-size: 8rem;
+  font-weight: bold;
+  color: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ticker .img-wrapper{
+  width: 111px;
+  margin: 0 20px;
+}
+.ticker .img-wrapper img{
+  width: 100%;
+  vertical-align: middle;
+}
+span {
+  display: inline-block;
+}
+
+.ticker-items,
+.ticker-wrapper {
+  display: inline-block;
+}
