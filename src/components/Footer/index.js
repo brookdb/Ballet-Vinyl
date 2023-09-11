@@ -5,6 +5,8 @@ import { ScrollTrigger, Flip } from 'gsap/all';
 
 //components
 import Ticker from "../Ticker";
+import withTextAnimation from "../HOC/withTextAnimation";
+
 
 //style
 import "./styles.css";
@@ -12,10 +14,21 @@ import "./styles.css";
 //import { ArrowRight } from 'react-bootstrap-icons';
 
 gsap.registerPlugin(Flip, ScrollTrigger);
+// HOC for animating any text
+const scrollTrigger = {
+  start: "bottom bottom",
+  marker: true,
+};
+const H3TL ={
+  y: -15,
+}
+const AnimatedH3 = withTextAnimation(({ children, className, scrollTrigger, timeline}) => <h3 className={className} scrollTrigger={scrollTrigger} timeline={timeline}>{children}</h3>);
 
 const Footer = () => {
   const FooterRef = useRef();
-  const timeline = {
+
+
+  const tickerTL = {
     xPercent: -100,
   }
   useLayoutEffect(() => {
@@ -43,7 +56,8 @@ const Footer = () => {
                 <li><a href="#">YOUTUBE</a></li>
               </ul>
             </div>
-            <Ticker v={50} timeline={timeline}  className={"ticker"}>
+            <AnimatedH3 className="credits" scrollTrigger={scrollTrigger} timeline={H3TL}>Created by <a href="https://github.com/brookdb">Brook Daba</a></AnimatedH3>
+            <Ticker v={50} timeline={tickerTL}  className={"ticker"}>
               <li className="img-wrapper">
                 <img src="https://i.imgur.com/yUacrXq.png"/>
               </li>

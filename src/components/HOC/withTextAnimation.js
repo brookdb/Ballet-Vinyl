@@ -11,6 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 const withTextAnimation = (WrappedComponent) => {
   return (props) => {
     const textRef = useRef();
+    console.log("props");
+    console.log(props);
 
     useLayoutEffect(() => {
       const ctx = gsap.context(() => {
@@ -25,7 +27,9 @@ const withTextAnimation = (WrappedComponent) => {
             trigger: textRef.current,
             start: "top 75%",
             marker: true,
+            ... props.scrollTrigger,
           },
+          ... props.timeline,
         });
       }, textRef);
 

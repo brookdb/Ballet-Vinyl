@@ -100,3 +100,11 @@ html, body{
 	height: 100%;
 	width: auto;
 }
+
+.credits{
+	margin: 5px;
+	padding: 10px;
+	font-size: 10pt;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+}
